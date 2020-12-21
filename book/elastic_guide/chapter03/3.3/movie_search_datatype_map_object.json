@@ -1,0 +1,14 @@
+{
+  "properties": {
+    "companies": {
+      "properties": {
+        "companyCd": {
+          "type": "text"
+        },
+        "companyName": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}

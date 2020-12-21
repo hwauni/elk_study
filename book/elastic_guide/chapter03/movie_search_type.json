@@ -1,0 +1,11 @@
+{
+ "size":0,
+  "aggs": {
+    "indices": {
+      "terms": {
+        "field": "_type",
+        "size": 10
+      }
+    }
+  }
+}

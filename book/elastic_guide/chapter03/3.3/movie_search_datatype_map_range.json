@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "showRange": {
+      "type": "date_range"
+    }
+  }
+}

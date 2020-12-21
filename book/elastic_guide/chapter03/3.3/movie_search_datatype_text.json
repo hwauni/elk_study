@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "moiveComment": {
+      "type": "text"
+    }
+  }
+}

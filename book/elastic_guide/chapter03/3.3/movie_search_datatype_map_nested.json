@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "companies_nested": {
+      "type": "nested"
+    }
+  }
+}

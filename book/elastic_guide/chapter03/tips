@@ -1,0 +1,25 @@
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search?include_type_name=true&pretty=true' -d @movie_mapping.json
+
+curl -XGET 'http://itp-ncl-es01:9200/movie_search?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_search/_mapping?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_search/_search?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/movie_search?pretty'
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search/_doc/1?pretty' -d @movie_search.json
+
+#3.2
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search/_search?pretty' -d @movie_search_index.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search/_search?pretty' -d @movie_search_type.json
+
+
+curl -XPUT 'http://itp-ncl-es01:9200/reindex_movie?pretty'
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_reindex?pretty' -d @reindex_movie.json
+curl -XGET 'http://itp-ncl-es01:9200/reindex_movie/_search?pretty'
+
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_routing?include_type_name=true&pretty' -d @movie_routing_mapping.json
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_routing/_doc/1?routing=ko&pretty' -d @movie_routing.json
+curl -XGET 'http://itp-ncl-es01:9200/movie_routing/_search?routing=ko&pretty=true'
+#3.3
+

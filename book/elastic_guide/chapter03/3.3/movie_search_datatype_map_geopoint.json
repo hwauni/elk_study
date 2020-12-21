@@ -1,0 +1,7 @@
+{
+  "properties": {
+    "filmLocation": {
+      "type": "geo_point"
+    }
+  }
+}

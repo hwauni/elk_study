@@ -1,0 +1,12 @@
+{
+  "properties": {
+    "moiveComment": {
+      "type": "text",
+      "fields": {
+        "moiveComment_keyword" : {
+          "type" : "keyword"
+        }
+      }
+    }
+  }
+}
