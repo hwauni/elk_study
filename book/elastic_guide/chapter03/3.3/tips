@@ -49,6 +49,9 @@ curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_s
 
 curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_map_nested.json
 curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_nested.json
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/2?pretty' -d @movie_search_datatype_nested.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search_datatype/_search?pretty' -d @movie_search_datatype_nested_search.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search_datatype/_search?pretty' -d @movie_search_datatype_nested_search2.json
 
 curl -XGET 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping?pretty'
 curl -XGET 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty'

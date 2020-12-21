@@ -1,0 +1,19 @@
+{
+  "query": {
+    "nested": {
+      "path": "companies_nested",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "match": { "companies_nested.companyName": "위너브라더스" }
+            },
+            {
+              "match": { "companies_nested.companyCd": "1" }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
