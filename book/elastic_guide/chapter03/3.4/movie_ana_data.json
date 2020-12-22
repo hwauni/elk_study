@@ -1,0 +1,4 @@
+{
+ "analyzer" : "movie_lower_test_analyzer",
+ "text" : "<B>Elasticsearch</B> is cool"
+}
