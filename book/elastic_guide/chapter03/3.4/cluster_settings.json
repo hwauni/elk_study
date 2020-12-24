@@ -1,0 +1,6 @@
+{
+    "persistent": {
+        "action.auto_create_index": "false",
+        "index.mapper.dynamic": "false"
+    }
+}

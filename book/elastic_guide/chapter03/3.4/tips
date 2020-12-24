@@ -49,71 +49,12 @@ curl -XDELETE 'http://itp-ncl-es01:9200/movie_synonym_analyzer?pretty'
 curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_synonym_analyzer?pretty' -d @movie_analyzer_synonym_map.json
 curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_synonym_analyzer/_analyze?pretty' -d @movie_analyzer_synonym_check.json
 
+curl -XPOST 'http://itp-ncl-es01:9200/movie_synonym_analyzer/_close?pretty'
+curl -XPOST 'http://itp-ncl-es01:9200/movie_synonym_analyzer/_open?pretty'
+
+
 curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_trim_analyzer?pretty' -d @movie_analyzer_trim_map.json
 curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_trim_analyzer/_analyze?pretty' -d @movie_analyzer_trim_check.json
 
-
-
-
-#
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search?include_type_name=true&pretty=true' -d @movie_mapping.json
-
-curl -XGET 'http://itp-ncl-es01:9200/movie_search?pretty'
-curl -XGET 'http://itp-ncl-es01:9200/movie_search/_mapping?pretty'
-curl -XGET 'http://itp-ncl-es01:9200/movie_search/_search?pretty'
-curl -XDELETE 'http://itp-ncl-es01:9200/movie_search?pretty'
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search/_doc/1?pretty' -d @movie_search.json
-
-#3.2
-curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search/_search?pretty' -d @movie_search_index.json
-curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search/_search?pretty' -d @movie_search_type.json
-
-
-curl -XPUT 'http://itp-ncl-es01:9200/reindex_movie?pretty'
-curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_reindex?pretty' -d @reindex_movie.json
-curl -XGET 'http://itp-ncl-es01:9200/reindex_movie/_search?pretty'
-
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_routing?include_type_name=true&pretty' -d @movie_routing_mapping.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_routing/_doc/1?routing=ko&pretty' -d @movie_routing.json
-curl -XGET 'http://itp-ncl-es01:9200/movie_routing/_search?routing=ko&pretty=true'
-
-# 3.3
-curl -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype?pretty'
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_keyword.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_text.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_text_keyword.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_array.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_date.json
-curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_date_value.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_map_range.json
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_range.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_map_geopoint.json
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_geopoint.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_map_ip.json
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_ip.json
-
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_map_object.json
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_object.json
-
-curl -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype?pretty'
-curl -XDELETE 'http://itp-ncl-es01:9200/movie_search_datatype?pretty'
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping/_doc?include_type_name=true&pretty=true' -d @movie_search_datatype_map_nested.json
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty' -d @movie_search_datatype_nested.json
-curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/2?pretty' -d @movie_search_datatype_nested.json
-curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search_datatype/_search?pretty' -d @movie_search_datatype_nested_search.json
-curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_search_datatype/_search?pretty' -d @movie_search_datatype_nested_search2.json
-
-curl -XGET 'http://itp-ncl-es01:9200/movie_search_datatype/_mapping?pretty'
-curl -XGET 'http://itp-ncl-es01:9200/movie_search_datatype/_doc/1?pretty'
 
 

@@ -1,20 +1,22 @@
 {
   "settings": {
-    "analysis": {
-      "filter": {
-        "synonym_filter": {
-          "type": "synonym",
-          "synonyms": [
-            "Harry => 해리"
-          ]
-        }
-      },
-      "analyzer": {
-        "synonym_analyzer": {
-          "tokenizer": "whitespace",
-          "filter": [
-            "synonym_filter"
-          ]
+    "index": {
+      "analysis": {
+        "filter": {
+          "synonym_filter": {
+            "type": "synonym",
+            "ignore_case": true,
+            "synonyms_path": "/etc/elasticsearch/config/synonym.txt"
+          }
+        },
+        "analyzer": {
+          "synonym_analyzer": {
+            "tokenizer": "standard",
+            "filter": [
+              "lowercase",
+              "synonym_filter"
+            ]
+          }
         }
       }
     }
