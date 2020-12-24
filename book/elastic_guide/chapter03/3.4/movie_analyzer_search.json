@@ -2,7 +2,7 @@
   "query": {
     "query_string": {
       "default_operator": "AND",
-      "query": "Chamber of Secrets"
+      "query": "chamber of secrets"
     }
   }
 }

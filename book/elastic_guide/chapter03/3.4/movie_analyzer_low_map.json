@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "lowercase_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase"
+          ]
+        }
+      }
+    }
+  }
+}

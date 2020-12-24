@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "synonym_filter": {
+          "type": "synonym",
+          "synonyms": [
+            "Harry => 해리"
+          ]
+        }
+      },
+      "analyzer": {
+        "synonym_analyzer": {
+          "tokenizer": "whitespace",
+          "filter": [
+            "synonym_filter"
+          ]
+        }
+      }
+    }
+  }
+}

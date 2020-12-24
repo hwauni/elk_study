@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "stop_filter_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "standard",
+            "stop_filter"
+          ]
+        }
+      },
+      "filter": {
+        "stop_filter": {
+          "type": "stop",
+          "stopwords": [
+            "and",
+            "is",
+            "the"
+          ]
+        }
+      }
+    }
+  }
+}

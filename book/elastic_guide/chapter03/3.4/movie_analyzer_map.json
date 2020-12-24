@@ -35,8 +35,8 @@
       "properties": {
         "title": {
           "type": "text",
-          "analyzer": "movie_stop_test_analyzer",
-          "search_analyzer": "movie_lower_test_analyzer"
+          "search_analyzer": "movie_stop_test_analyzer",
+          "analyzer": "movie_lower_test_analyzer"
         }
       }
     }

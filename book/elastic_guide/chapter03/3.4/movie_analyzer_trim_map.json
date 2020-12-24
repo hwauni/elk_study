@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "trim_analyzer": {
+          "tokenizer": "keyword",
+          "filter": [
+            "lowercase",
+            "trim"
+          ]
+        }
+      }
+    }
+  }
+}

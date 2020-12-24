@@ -1,0 +1,4 @@
+{
+  "analyzer": "html_strip_analyzer",
+  "text": "<span>Harry Potter</span> and the <b>Chamber</b> of Secrets"
+}

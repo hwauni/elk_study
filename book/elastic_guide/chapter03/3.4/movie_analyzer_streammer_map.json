@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "stemmer_eng_filter": {
+          "type": "stemmer",
+          "name": "english"
+        }
+      },
+      "analyzer": {
+        "stemmer_eng_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "stemmer_eng_filter"
+          ]
+        }
+      }
+    }
+  }
+}
