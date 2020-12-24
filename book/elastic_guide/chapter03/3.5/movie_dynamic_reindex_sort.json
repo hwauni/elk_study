@@ -1,0 +1,12 @@
+{
+  "size": 10000,
+  "source": {
+    "index": "movie_dynamic",
+    "sort": {
+      "counter": "desc"
+    }
+  },
+  "dest": {
+    "index": "movie_dynamic_new"
+  }
+}

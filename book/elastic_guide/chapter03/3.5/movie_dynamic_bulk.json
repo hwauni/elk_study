@@ -1,0 +1,6 @@
+{ "index": {"_index": "movie_dynamic", "_type": "_doc", "_id": "1"} }
+{ "title": "살아남은 아이" }
+{ "index": {"_index": "movie_dynamic", "_type": "_doc", "_id": "2"} }
+{ "title": "해리포터와 비밀의 방" }
+{ "index": {"_index": "movie_dynamic", "_type": "_doc", "_id": "3"} }
+{ "title": "bbororo" }

@@ -1,0 +1,41 @@
+# 3.5
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/movie_dynamic?pretty'
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?pretty' -d @movie_dynamic_id.json
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?pretty' -d @movie_dynamic_version.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?version=1&pretty=true' -d @movie_dynamic_version.json
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?version=1&pretty=true'
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?op_type=create&pretty=true' -d @movie_dynamic_id.json
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?timeout=5m&pretty=true' -d @movie_dynamic_id.json
+
+#3.5.3
+curl -XPUT 'http://itp-ncl-es01:9200/movie_dynamic?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/movie_dynamic?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/movie_dynamic_new?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic_new?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic_new/_doc/1?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?pretty'
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1?pretty' -d @movie_dynamic.json
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_dynamic?include_type_name=true&pretty=true' -d @movie_dynamic_map.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_dynamic/_delete_by_query?pretty' -d @movie_dynamic_del.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_dynamic/_doc/1/_update?pretty' -d @movie_dynamic_update.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_bulk?pretty' --data-binary @movie_dynamic_bulk.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_bulk?pretty' --data-binary @movie_dynamic_bulk2.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_reindex?pretty' -d @movie_dynamic_reindex.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_reindex?pretty' -d @movie_dynamic_reindex_term.json
+
+# sort Deprecated in 7.6
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_reindex?pretty' -d @movie_dynamic_reindex_sort.json

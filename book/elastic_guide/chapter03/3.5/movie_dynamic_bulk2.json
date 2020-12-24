@@ -1,0 +1,7 @@
+{ "index": {"_index": "movie_dynamic", "_type": "_doc", "_id": "1"} }
+{ "title": "살아남은 아이" }
+{ "delete": {"_index": "movie_dynamic", "_type": "_doc", "_id": "2"} }
+{ "index": {"_index": "movie_dynamic", "_type": "_doc", "_id": "3"} }
+{ "title": "프렌즈: 몬스터섬의비밀" }
+{ "update": {"_index": "movie_dynamic", "_type": "_doc", "_id": "1"} }
+{ "doc": { "movieNmEn": "Last Child" } }

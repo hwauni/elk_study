@@ -1,0 +1,14 @@
+{
+  "source": {
+    "index": "movie_dynamic",
+    "type": "_doc",
+    "query": {
+      "term": {
+        "title.keyword": "프렌즈: 몬스터섬의비밀"
+      }
+    }
+  },
+  "dest": {
+    "index": "movie_dynamic_new"
+  }
+}

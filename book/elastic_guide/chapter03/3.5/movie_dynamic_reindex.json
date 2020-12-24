@@ -1,0 +1,8 @@
+{  
+  "source": {
+    "index": "movie_dynamic"
+  },
+  "dest": {
+    "index": "movie_dynamic_new"
+  }
+}
