@@ -1,0 +1,7 @@
+{
+  "query": {
+    "term": {
+      "repGenreNm": "다큐멘터리"
+    }
+  }
+}

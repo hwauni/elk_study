@@ -1,0 +1,7 @@
+{
+  "query" : {
+    "prefix": {
+      "movieNm": "자전차"
+        }
+    }
+}

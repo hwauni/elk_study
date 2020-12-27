@@ -1,0 +1,5 @@
+{
+	"transient": {
+    	"cluster.routing.use_adaptive_replica_selection": true
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "movieNmEn": {
+        "query": "Fli High",
+        "fuzziness": 1
+      }
+    }
+  }
+}

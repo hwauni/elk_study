@@ -1,0 +1,24 @@
+# 4.4
+curl -XGET 'http://hwauni.es:9200/_cluster/settings?pretty'
+curl -XGET 'http://hwauni.es:9200/movie_search/_search_shards?pretty'
+
+
+curl -H 'Content-Type: application/json' -XPUT 'http://hwauni.es:9200/_cluster/settings?pretty' -d @elasticsearch_cluster_settings_routing.json
+curl -H 'Content-Type: application/json' -XPUT 'http://hwauni.es:9200/_cluster/settings?pretty' -d @elasticsearch_cluster_settings_timeout.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/_msearch?pretty' --data-binary @movie_Search_msearch.json
+
+curl -XGET 'http://hwauni.es:9200/movie_search/_count?q=prdtYear:2017&pretty'
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_count?pretty' -d @movie_Search_api_count.json
+
+
+curl -XGET 'http://hwauni.es:9200/movie_search/_validate/query?q=prdtYear:2017&pretty'
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_validate/query?pretty' -d @movie_Search_api_validate.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_validate/query?rewrite=true&pretty=true' -d @movie_Search_api_validate_rewrite.json
+
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_Search_api_explain_score.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_doc/uTzJqmkBjjM-ebDb8PsR/_explain?pretty' -d @movie_Search_api_explain_score.json
+
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_Search_api_profile.json

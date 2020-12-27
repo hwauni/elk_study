@@ -1,0 +1,10 @@
+{
+  "_source": [
+    "movieNm"
+  ],
+  "query": {
+    "term": {
+      "repNationNm": "한국"
+    }
+  }
+}

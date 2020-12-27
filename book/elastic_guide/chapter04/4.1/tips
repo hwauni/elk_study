@@ -1,0 +1,43 @@
+curl -XPUT 'http://hwauni.es:9200/movie_dynamic?pretty'
+curl -XDELETE 'http://hwauni.es:9200/movie_dynamic?pretty'
+curl -XDELETE 'http://hwauni.es:9200/movie_dynamic_new?pretty'
+curl -XGET 'http://hwauni.es:9200/movie_dynamic_new?pretty'
+curl -XGET 'http://hwauni.es:9200/movie_dynamic_new/_doc/1?pretty'
+curl -XGET 'http://hwauni.es:9200/movie_dynamic?pretty'
+curl -XGET 'http://hwauni.es:9200/movie_dynamic/_doc/1?pretty'
+curl -XDELETE 'http://hwauni.es:9200/movie_dynamic/_doc/1?pretty'
+
+curl -XGET 'http://hwauni.es:9200/_cat/indices?v&pretty'
+
+
+# 4.1
+GET movie_search/_search?q=prdtYear:2018
+curl -XGET 'http://hwauni.es:9200/movie_search/_search?q=prdtYear:2018&pretty'
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_term.json
+
+
+# deprecated ??
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?q=movieNmEn:* AND prdtYear:2017&analyze_wildcard=true&from=0&size=5&sort=_score:desc,movieCd:asc&_source_includes=movieCd, movieNm,mvoieNmEn,typeNm&pretty'
+
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_query.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_filter.json
+
+# 4.1
+curl -XGET 'http://hwauni.es:9200/movie_auto?pretty'
+curl -XPUT 'http://hwauni.es:9200/movie_auto?pretty'
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search,movie_auto/_search?pretty' -d @movie_search_multi.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_from1.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_from2.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_sort.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_sort_multi.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_source.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_range.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_op.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_minimum.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_fuzziness.json
+curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_boost.json

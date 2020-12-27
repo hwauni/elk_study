@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "number_of_replicas": 1,
+    "number_of_shards": 5
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "repGenreNm":{
+            "type" : "keyword"
+          },
+        "companies": {
+          "type": "nested",
+          "properties": {
+            "companyCd":    { "type": "keyword"  },
+            "companyNm": { "type": "keyword"  }
+
+          }
+        }
+      }
+    }
+  }
+}

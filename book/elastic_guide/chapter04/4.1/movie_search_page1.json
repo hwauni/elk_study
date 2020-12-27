@@ -1,0 +1,9 @@
+{
+   "from": 0,
+   "size": 5,
+   "query": {
+     "term": {
+     "repNationNm": "한국"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "movieNm": {
+        "query": "자전차왕 엄복동",
+        "minimum_should_match": 2
+      }
+    }
+  }
+}

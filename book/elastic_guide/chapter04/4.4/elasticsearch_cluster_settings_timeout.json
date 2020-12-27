@@ -1,0 +1,5 @@
+{
+	"transient": {
+    	"search.default_search_timeout": "1s"
+	}
+}

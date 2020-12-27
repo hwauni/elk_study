@@ -1,0 +1,12 @@
+{
+   "query": {
+     "term": {
+       "repNationNm" : "한국"
+     }
+   },
+   "sort" :{
+     "prdtYear": {
+        "order": "desc"
+      }
+   }
+}

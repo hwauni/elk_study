@@ -1,0 +1,5 @@
+{
+ 	"query" : {
+ 		"term" : { "prdtYear": "2018" }
+ 	}
+}

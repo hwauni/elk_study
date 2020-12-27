@@ -1,0 +1,16 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ],
+      "filter": {
+        "term": {
+          "repGenreNm": "다큐멘터리"
+        }
+      }
+    }
+  }
+}
