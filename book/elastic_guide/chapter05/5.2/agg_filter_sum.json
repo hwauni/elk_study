@@ -1,0 +1,16 @@
+{
+  "query" : {
+    "constant_score" : {
+      "filter" : {
+          "match" : { "geoip.city_name" : "Paris" }
+      }
+    }
+  },
+  "aggs": {
+    "total_bytes": {
+      "sum": {
+        "field": "bytes"
+      }
+    }
+  }
+}

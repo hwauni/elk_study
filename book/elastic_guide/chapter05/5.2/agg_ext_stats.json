@@ -1,0 +1,9 @@
+{
+  "aggs": {
+    "bytes_extended_stats": {
+      "extended_stats": {
+        "field": "bytes"
+      }
+    }
+  }
+}

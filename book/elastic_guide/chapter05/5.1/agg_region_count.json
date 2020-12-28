@@ -1,0 +1,13 @@
+{
+  "query": {
+    "match_all": {} 
+  },
+  "aggs": {
+    "region_count": {
+      "terms": {
+        "field": "geoip.region_name.keyword",
+        "size": 20
+      }
+    }
+  }
+}

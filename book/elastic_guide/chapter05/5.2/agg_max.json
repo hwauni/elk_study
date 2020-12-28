@@ -1,0 +1,9 @@
+{
+  "aggs": {
+    "total_bytes": {
+      "max": {
+        "field": "bytes"
+      }
+    }
+  }
+}

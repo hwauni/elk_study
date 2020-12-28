@@ -1,0 +1,9 @@
+{
+  "aggs": {
+    "total_bytes": {
+      "sum": {
+        "field": "bytes"
+      }
+    }
+  }
+}

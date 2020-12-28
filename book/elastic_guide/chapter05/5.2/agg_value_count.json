@@ -1,0 +1,9 @@
+{
+  "aggs": {
+    "bytes_count": {
+      "value_count": {
+        "field": "bytes"
+      }
+    }
+  }
+}
