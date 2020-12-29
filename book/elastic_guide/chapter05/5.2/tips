@@ -1,55 +1,43 @@
-# 5.1
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_sum.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_sum.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_script_sum.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_script_sum2.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_script_sum3.json
+# 5.2
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_sum.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_sum.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_script_sum.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_script_sum2.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_script_sum3.json
 
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_avg.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_avg.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_avg.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_avg.json
 
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_min.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_min.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_min.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_min.json
 
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_max.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_max.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_max.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_max.json
 
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_value_count.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_value_count.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_value_count.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_value_count.json
 
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_stats.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_stats.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_stats.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_stats.json
 
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_ext_stats.json
-curl -H 'Content-Type: application/json' -XGET 'http://hwauni.es:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_ext_stats.json
-
-
-curl -XPUT 'http://hwauni.es:9200/movie_dynamic?pretty'
-curl -XDELETE 'http://hwauni.es:9200/movie_dynamic?pretty'
-curl -XDELETE 'http://hwauni.es:9200/movie_dynamic_new?pretty'
-curl -XGET 'http://hwauni.es:9200/movie_dynamic_new?pretty'
-curl -XGET 'http://hwauni.es:9200/movie_dynamic_new/_doc/1?pretty'
-curl -XGET 'http://hwauni.es:9200/movie_dynamic?pretty'
-curl -XGET 'http://hwauni.es:9200/movie_dynamic/_doc/1?pretty'
-curl -XDELETE 'http://hwauni.es:9200/movie_dynamic/_doc/1?pretty'
-
-curl -XGET 'http://hwauni.es:9200/_cat/indices?v&pretty'
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_ext_stats.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_ext_stats.json
 
 
-# 4.3
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_match_all.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_match.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_term.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_bool.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_query.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_prefix.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_exist.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_mustnot.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_search/_search?pretty' -d @movie_search_qdsl_wildcard.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_terms.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_filter_cardinality.json
 
-curl -H 'Content-Type: application/json' -XPUT 'http://hwauni.es:9200/movie_nested?include_type_name=true&pretty=true' -d @movie_search_qdsl_map_nested.json
-curl -H 'Content-Type: application/json' -XPUT 'http://hwauni.es:9200/movie_nested/_doc/1?pretty' -d @movie_search_qdsl_nested_data.json
-curl -H 'Content-Type: application/json' -XPOST 'http://hwauni.es:9200/movie_nested/_search?pretty' -d @movie_search_qdsl_nested.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_percentiles.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_percentiles_mod.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_percentiles_ranks.json
 
-curl -XGET 'http://hwauni.es:9200/movie_nested/_doc/1?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/_mappings?pretty'
+curl -XPOST 'http://itp-ncl-es01:9200/_snapshot/apache-web-log/applied-mapping/_restore?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/_cat/indices/apache*?v&pretty'
+curl -XGET 'http://itp-ncl-es01:9200/apache-web-log-applied-mapping/_mapping/field/geoip.location?pretty'
+
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log-applied-mapping/_search?size=2&pretty' -d @agg_geoip.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log-applied-mapping/_search?size=2&pretty' -d @agg_geo_bounds.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log-applied-mapping/_search?size=2&pretty' -d @agg_geo_centroid.json
+
 

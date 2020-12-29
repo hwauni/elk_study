@@ -1,0 +1,17 @@
+{
+  "query" : {
+    "constant_score" : {
+      "filter" : {
+          "match" : { "geoip.country_name" : "United States" }
+      }
+    }
+  },
+  "aggs": {
+    "us_city_names": {
+      "terms": {
+        "field": "geoip.city_name.keyword",
+        "size": 20
+      }
+    }
+  }
+}

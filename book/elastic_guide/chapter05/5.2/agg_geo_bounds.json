@@ -1,0 +1,17 @@
+{
+  "query" : {
+    "constant_score" : {
+      "filter" : {
+          "match" : { "geoip.continent_code" : "EU" }
+      }
+    }
+  },
+  "aggs" : {
+    "viewport" : {
+      "geo_bounds" : {
+        "field" : "geoip.location", 
+        "wrap_longitude" : true 
+      }
+    }
+  }
+}

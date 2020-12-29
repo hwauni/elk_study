@@ -1,0 +1,9 @@
+{
+  "aggs": {
+    "bytes_percentiles": {
+      "percentiles": {
+        "field": "bytes"
+      }
+    }
+  }
+}

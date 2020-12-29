@@ -1,0 +1,16 @@
+{
+  "query" : {
+    "constant_score" : {
+      "filter" : {
+          "match" : { "geoip.country_name" : "United States" } 
+      }
+    }
+  },
+  "aggs": {
+    "us_cardinality": {
+      "cardinality": {
+        "field": "geoip.city_name.keyword"
+      }
+    }
+  }
+}

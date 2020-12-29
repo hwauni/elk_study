@@ -1,0 +1,10 @@
+{
+  "aggs": {
+    "bytes_percentile_ranks": {
+      "percentile_ranks": {
+        "field": "bytes",
+        "values": [5000, 10000]
+      }
+    }
+  }
+}
