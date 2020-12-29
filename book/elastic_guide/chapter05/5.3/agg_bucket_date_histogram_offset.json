@@ -1,0 +1,11 @@
+{
+    "aggs" : {
+        "daily_request_count" : {
+            "date_histogram": {
+              "field": "timestamp",
+              "interval": "day",
+              "offset": "+3h"
+            }
+        }
+    }
+}

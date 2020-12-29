@@ -1,0 +1,10 @@
+{
+    "aggs" : {
+        "bytes_histogram" : {
+            "histogram" : {
+                "field" : "bytes",
+                "interval": 10000
+            }
+        }
+    }
+}

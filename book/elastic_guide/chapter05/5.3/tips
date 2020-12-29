@@ -1,0 +1,26 @@
+# 5.3
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_range.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_range_arr.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_range_key.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_date_range.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_histogram.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_histogram_min.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_date_histogram.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_date_histogram_format.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_date_histogram_timezone.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_date_histogram_offset.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_terms.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_bucket_terms_size.json
+
+
+
+curl -XGET 'http://itp-ncl-es01:9200/_mappings?pretty'
+curl -XPOST 'http://itp-ncl-es01:9200/_snapshot/apache-web-log/applied-mapping/_restore?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/_cat/indices/apache*?v&pretty'
+curl -XGET 'http://itp-ncl-es01:9200/apache-web-log/_mapping/field/geoip.location?pretty'
+
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_geoip.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_geo_bounds.json
+curl -H 'Content-Type: application/json' -XGET 'http://itp-ncl-es01:9200/apache-web-log/_search?size=2&pretty' -d @agg_geo_centroid.json
+
+

@@ -1,0 +1,10 @@
+{
+  "aggs" : {
+    "request count by country" : {
+      "terms" : {
+        "field" : "geoip.country_name.keyword",
+        "size": 100
+      }
+    }
+  }
+}

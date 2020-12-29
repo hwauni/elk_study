@@ -1,0 +1,15 @@
+{
+    "aggs" : {
+        "bytes_range" : {
+            "range": {
+              "field": "bytes",
+              "ranges": [
+                {
+                  "from": 1000,
+                  "to": 2000
+                }
+              ]
+            }
+        }
+    }
+}

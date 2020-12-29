@@ -1,0 +1,11 @@
+{
+    "aggs" : {
+        "bytes_histogram" : {
+            "histogram" : {
+                "field" : "bytes",
+                "interval": 10000,
+                "min_doc_count": 1
+            }
+        }
+    }
+}
