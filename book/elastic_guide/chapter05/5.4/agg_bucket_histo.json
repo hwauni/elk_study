@@ -1,0 +1,17 @@
+{
+  "aggs": {
+    "histo": {
+      "date_histogram": {
+        "field": "timestamp",
+        "interval": "day"
+      },
+      "aggs": {
+        "bytes_sum": {
+          "sum": {
+            "field": "bytes"
+          }
+        }
+      }
+    }
+  }
+}
