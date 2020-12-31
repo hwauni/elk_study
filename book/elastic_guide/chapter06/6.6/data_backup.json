@@ -1,0 +1,7 @@
+{
+  "type": "fs",
+  "settings": {
+    "location": "/gfs/E18100/elasticsearch/data/backup",
+    "compress": true
+  }
+}

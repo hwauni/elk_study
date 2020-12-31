@@ -1,0 +1,21 @@
+# 6.6
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup?pretty' -d @data_backup.json
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup/movie_snapshot_part1?wait_for_completion=true&pretty=true' -d @create_snapshot.json
+
+curl -XDELETE 'http://itp-ncl-es01:9200/movie_info?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_info?pretty'
+curl -XPOST 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup/movie_snapshot_part1/_restore?pretty'
+
+curl -XGET 'http://itp-ncl-es01:9200/_snapshot/_status?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup/_status?pretty'
+
+curl -XGET 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup/movie_snapshot_part1?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup/_all?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_search_20201231?pretty'
+
+
+curl -XDELETE 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup/movie_snapshot_part1?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/_snapshot/movie_data_backup?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/_snapshot?pretty'
+
