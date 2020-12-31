@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "index":{
+            "analysis":{
+                "analyzer" : {
+                    "nori_readingform_analyzer" : {
+                        "tokenizer" : "nori_tokenizer",
+                        "filter" : ["nori_readingform"]
+                    }
+                }
+            }
+        }
+    }
+}
