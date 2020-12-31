@@ -1,0 +1,6 @@
+{
+  "id": "movie_search_example_teamplate",
+  "params": {
+    "movie_name": "titanic"
+  }
+}

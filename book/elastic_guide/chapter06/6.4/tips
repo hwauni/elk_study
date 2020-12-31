@@ -1,0 +1,8 @@
+# 6.4
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_scripts/movie_search_example_template?pretty' -d @templ_script.json
+
+curl -XGET 'http://itp-ncl-es01:9200/_scripts/movie_search_example_template?pretty'
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_template_test/_doc/1?pretty' -d @templ_script_data.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_template_test/_doc/_search/template?pretty' -d @templ_script_search.json
