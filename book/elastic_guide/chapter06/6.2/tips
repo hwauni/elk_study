@@ -1,0 +1,29 @@
+# 6.1
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/movie_highlighting/_doc/1?pretty' -d @high_data.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_highlighting/_search?pretty' -d @high_search.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/movie_highlighting/_search?pretty' -d @high_search_tag.json
+
+
+
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/nori_analyzer?pretty' -d @nori_set_dict.json
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/nori_analyzer/_settings?pretty' -d @nori_set_partofspeech.json
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/nori_analyzer/_settings?pretty' -d @nori_set_readingform.json
+curl -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_close?pretty'
+curl -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_open?pretty'
+curl -XDELETE 'http://itp-ncl-es01:9200/nori_analyzer?pretty'
+
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_analyze?pretty' -d @nori_analyze_check.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_analyze?pretty' -d @nori_analyze_check2.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_analyze?pretty' -d @nori_analyze_check3.json
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_analyze?pretty' -d @nori_analyze_check4.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_analyze?pretty' -d @nori_analyze_stoptags.json
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/nori_analyzer/_analyze?pretty' -d @nori_analyze_readingform_check.json
+
+
+
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/nori_full_analyzer?include_type_name=true&pretty=true' -d @nori_set_full.json
