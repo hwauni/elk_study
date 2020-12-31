@@ -1,0 +1,8 @@
+{
+	 "source": {
+	 	"index": "movie_search"
+	 },
+	 "dest": {
+	 	"index": "movie_info"
+	 }
+}

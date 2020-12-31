@@ -1,0 +1,6 @@
+{
+	 "actions" : [
+	 	{ "add" : { "index" : "movie_search", "alias" : "movie" } },
+	 	{ "add" : { "index" : "movie_info", "alias" : "movie" } }
+	 ]
+}

@@ -1,0 +1,7 @@
+# 6.4
+curl -XGET 'http://itp-ncl-es01:9200/movie_info?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie_search?pretty'
+curl -XGET 'http://itp-ncl-es01:9200/movie?pretty'
+
+curl -H 'Content-Type: application/json' -XPOST 'http://itp-ncl-es01:9200/_reindex?pretty' -d @alias_reindex.json
+curl -H 'Content-Type: application/json' -XPUT 'http://itp-ncl-es01:9200/_alias?pretty' -d @alias_action.json
